@@ -104,6 +104,8 @@ function LoginStepTwo() {
 
 
     useEffect(() => {
+        /* какое то сломанное апи, через addEventListener на "popstate" не тригерится, e.preventDefault() не работает
+        только с помощью такого костыля это заработало */
         window.onpopstate = function() {
             if (dialogIsOpen) {
                 history.go(1)
