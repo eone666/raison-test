@@ -105,7 +105,9 @@ function LoginStepTwo() {
 
     useEffect(() => {
         /* какое то сломанное апи, через addEventListener на "popstate" не тригерится, e.preventDefault() не работает
-        только с помощью такого костыля это заработало */
+        только с помощью такого костыля это заработало
+        UPD: еще можно затолкать стейт диалогового окна в history в виде searchParams
+        */
         window.onpopstate = function() {
             if (dialogIsOpen) {
                 history.go(1)
